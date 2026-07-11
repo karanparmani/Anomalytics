@@ -1,0 +1,28 @@
+{
+  "sanctionedNames": [
+    "VLADIMIR PETROV",
+    "ALEXANDER SMIRNOV",
+    "KIM JONG-UN",
+    "MOHAMMAD REZA",
+    "SADDAM HUSSEIN",
+    "OSAMA BIN LADEN",
+    "DRUG CARTEL INC",
+    "ILLEGAL WEAPONS CORP",
+    "LAUNDRY LAUNDERER"
+  ],
+  "sanctionedCountries": [
+    "KP",
+    "IR",
+    "SY",
+    "CU",
+    "VE",
+    "SD"
+  ],
+  "highRiskCountries": [
+    "RU",
+    "BY",
+    "YE",
+    "SO",
+    "LY"
+  ]
+}

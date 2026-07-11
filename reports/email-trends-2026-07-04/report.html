@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbox Trends And Follow-Ups</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #fcfcfd;
+      --panel: #ffffff;
+      --ink: #1f2430;
+      --muted: #5f6677;
+      --line: #dfe3ec;
+      --blue: #a3befa;
+      --blue-dark: #2e4780;
+      --gold: #ffe15b;
+      --gold-dark: #736422;
+      --olive: #a3d576;
+      --olive-dark: #386411;
+      --orange: #f0986e;
+      --orange-dark: #804126;
+      --pink: #f390ca;
+      --pink-dark: #8a3a6f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: "Segoe UI", Aptos, Inter, Arial, sans-serif;
+      font-size: 16px;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 42px 22px 72px;
+    }
+    header, section { margin-bottom: 34px; }
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 23px; }
+    h3 { font-size: 18px; margin-top: 22px; }
+    p, li {
+      line-height: 1.58;
+      color: #2b303b;
+    }
+    a { color: var(--blue-dark); }
+    .summary {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+    .summary ul { margin: 0; padding-left: 22px; }
+    .summary li + li { margin-top: 10px; }
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 16px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 23px;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    .metric span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f4f6fa;
+      color: var(--ink);
+      font-weight: 650;
+    }
+    tr:last-child td { border-bottom: 0; }
+    td.number { text-align: right; font-variant-numeric: tabular-nums; }
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin-right: 8px;
+      border-radius: 2px;
+      border: 1px solid currentColor;
+      vertical-align: -1px;
+    }
+    .promo::before { background: var(--blue); color: var(--blue-dark); }
+    .news::before { background: var(--gold); color: var(--gold-dark); }
+    .events::before { background: var(--olive); color: var(--olive-dark); }
+    .alerts::before { background: var(--orange); color: var(--orange-dark); }
+    .social::before { background: var(--pink); color: var(--pink-dark); }
+    .callout {
+      border-left: 4px solid var(--orange);
+      background: #fff7f2;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .muted { color: var(--muted); }
+    @media (max-width: 720px) {
+      main { padding: 30px 16px 54px; }
+      h1 { font-size: 28px; }
+      .metric-strip, .legend { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 9px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main data-report-audience="product stakeholders">
+    <header data-contract-section="title">
+      <h1>Inbox Trends And Follow-Ups</h1>
+      <p class="muted">Scope: Gmail inbox scan covering June 4 through July 4, 2026, excluding spam and trash. Weekly themes are based on the first 20 inbox messages returned for each weekly window.</p>
+    </header>
+
+    <section class="summary" data-contract-section="executive-summary">
+      <h2>Executive Summary</h2>
+      <ul>
+        <li><strong>The unread problem is almost entirely promotional.</strong> Gmail label totals show 6,856 unread messages in Promotions out of 6,942 unread messages overall, or about 98.8% of unread mail.</li>
+        <li><strong>The recent inbox is dominated by repeat commercial and content senders.</strong> In the 80-message weekly sample, 36 messages were promotions and deals, 16 were news or learning content, and 18 were sports, events, or community updates.</li>
+        <li><strong>Only a small set looked action-worthy right now.</strong> The clearest follow-ups are a failed Render deployment, a Rocket Money categorization item, and a LinkedIn message awaiting response.</li>
+      </ul>
+    </section>
+
+    <section data-contract-section="key-findings">
+      <h2>Promotions are crowding out the signal</h2>
+      <p><strong>The mailbox has a high unread baseline, but the actionable backlog is much smaller than the raw count suggests.</strong> The inbox label shows 112,685 messages and 6,926 unread threads/messages in the inbox view. Category totals show Promotions alone has 6,856 unread messages, while Updates has only 11 unread and Personal has 1 unread. That means the best first cleanup move is not reading every unread item. It is separating promotional senders from operational updates.</p>
+      <div class="metric-strip">
+        <div class="metric"><strong>6,856</strong><span>Unread messages in Promotions</span></div>
+        <div class="metric"><strong>98.8%</strong><span>Share of all unread mail in Promotions</span></div>
+        <div class="metric"><strong>80</strong><span>Messages manually categorized across four weekly samples</span></div>
+      </div>
+
+      <h3>Weekly sampled theme mix</h3>
+      <p><strong>The sampled inbox stays promotion-heavy, with sports and event traffic rising near the World Cup and July 4 weekend.</strong> The July 4 sample had fewer general retail deals than the prior week but more sports, event, and entertainment messages, including FIFA, soccer, theatre, and ticketing senders.</p>
+      <table aria-label="Weekly sampled email themes">
+        <thead>
+          <tr>
+            <th>Weekly window</th>
+            <th class="number">Promotions &amp; deals</th>
+            <th class="number">News &amp; learning</th>
+            <th class="number">Sports, events &amp; community</th>
+            <th class="number">Account, finance &amp; action alerts</th>
+            <th class="number">Social/network</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Jun 4-12</td><td class="number">8</td><td class="number">5</td><td class="number">1</td><td class="number">3</td><td class="number">3</td></tr>
+          <tr><td>Jun 13-19</td><td class="number">10</td><td class="number">2</td><td class="number">8</td><td class="number">0</td><td class="number">0</td></tr>
+          <tr><td>Jun 20-26</td><td class="number">12</td><td class="number">5</td><td class="number">2</td><td class="number">1</td><td class="number">0</td></tr>
+          <tr><td>Jun 27-Jul 4</td><td class="number">6</td><td class="number">4</td><td class="number">7</td><td class="number">3</td><td class="number">0</td></tr>
+        </tbody>
+      </table>
+      <div class="legend" aria-label="Theme legend">
+        <span class="promo">Promotions &amp; deals</span>
+        <span class="news">News &amp; learning</span>
+        <span class="events">Sports, events &amp; community</span>
+        <span class="alerts">Account, finance &amp; action alerts</span>
+        <span class="social">Social/network messages</span>
+      </div>
+
+      <h2>Action items are concentrated in Updates and Important</h2>
+      <p><strong>The near-term action list is short and concrete.</strong> Reading likely action-oriented messages surfaced three items worth checking before doing broad cleanup:</p>
+      <table aria-label="Likely email follow-ups">
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Email</th>
+            <th>Why it matters</th>
+            <th>Suggested next action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High</td>
+            <td><a href="https://mail.google.com/mail/#all/19f2dc79540f1185">Render: build failed for AutomatedDataValidation</a></td>
+            <td>The latest deployment did not complete, so the most recent changes may not be live.</td>
+            <td>Check Render logs for the failed build and rerun after fixing the cause.</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td><a href="https://mail.google.com/mail/#all/19f2db3287ed512d">Rocket Money: uncategorized transaction</a></td>
+            <td>A July 2 Zelle transaction needs categorization to keep spending reports accurate.</td>
+            <td>Verify the transaction and assign the right category in Rocket Money.</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td><a href="https://mail.google.com/mail/#all/19f2bc47df90295a">LinkedIn: Deepak Sharma messaged you</a></td>
+            <td>The message digest says one message is awaiting response.</td>
+            <td>Open LinkedIn and decide whether to reply, archive, or mute this sender.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Account and security notices are present but mostly informational</h2>
+      <p><strong>The account-security stream should be reviewed, not treated as ordinary newsletter noise.</strong> Recent notable notices include a Google security alert for OpenAI access to Google Account data, a Chase credit-card payment confirmation, Sony account setup messages, and a Grafana Cloud organization deletion notice. None of these looked like a direct reply thread, but they are worth keeping out of Promotions cleanup rules.</p>
+    </section>
+
+    <section data-contract-section="recommended-next-steps">
+      <h2>Recommended Next Steps</h2>
+      <ol>
+        <li><strong>Handle the three direct follow-ups first:</strong> Render build failure, Rocket Money categorization, and LinkedIn message.</li>
+        <li><strong>Create a low-noise daily review query:</strong> check recent inbox mail with Promotions excluded and Important included before touching the full unread count.</li>
+        <li><strong>Batch-clean recurring promotional senders:</strong> the sample repeatedly surfaced Express, The Information, Banana Republic, New York Theatre Guide, VESCARTES, lululemon, and sports/event newsletters. Decide which of those are useful, then unsubscribe, filter, or archive in batches.</li>
+        <li><strong>Keep finance, account, deployment, and security alerts separate:</strong> these were a small share of the inbox but included the highest-impact items.</li>
+      </ol>
+    </section>
+
+    <section data-contract-section="further-questions">
+      <h2>Further Questions</h2>
+      <p>The highest-value follow-up would be choosing one cleanup mode: unsubscribe recommendations, a full 30-day action audit, finance/security-only monitoring, or a developer-ops alert view for deployment and account notices.</p>
+    </section>
+
+    <section data-contract-section="caveats-and-assumptions">
+      <h2>Caveats And Assumptions</h2>
+      <div class="callout">
+        <p>The theme table is based on sampled search results, not a complete count of every email from June 4 through July 4, 2026. Gmail label totals are current mailbox totals, not date-bounded counts. Only likely action-oriented messages were opened for body-level review; most promotions and newsletters were categorized from sender, subject, snippet, labels, and timestamp.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

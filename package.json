@@ -1,0 +1,27 @@
+{
+  "name": "ueba-agentic-tool",
+  "version": "1.0.0",
+  "description": "AI-Powered User Behaviour Analytics Tool for Banking Infrastructure",
+  "main": "dist/infrastructure/web/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/infrastructure/web/server.js",
+    "dev": "tsx src/infrastructure/web/server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "simulate": "tsx scripts/run_simulation.ts"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/node": "20.14.9",
+    "tsx": "4.15.6",
+    "typescript": "5.4.5",
+    "vitest": "^4.1.10"
+  },
+  "type": "module"
+}

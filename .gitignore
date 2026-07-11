@@ -1,0 +1,27 @@
+# Node dependency directories
+node_modules/
+
+# Production build outputs
+dist/
+
+# Local env files
+.env
+.env.local
+
+# Databases
+*.db
+*.sqlite
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# VS Code and IDE settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vs/
