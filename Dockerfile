@@ -18,6 +18,7 @@ RUN npm run build
 
 # Copy sanctions assets to compiled dist folder
 COPY src/domain/services/sanctions_list.json ./dist/domain/services/sanctions_list.json
+COPY src/infrastructure/web/public/ ./dist/infrastructure/web/public/
 
 # Prune devDependencies for security and smaller footprint
 RUN npm prune --production
