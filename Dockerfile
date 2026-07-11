@@ -4,11 +4,11 @@ FROM node:24-alpine
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy dependency definition files, tsconfig, and schema
-COPY package*.json tsconfig.json schema.sql ./
+# Copy package.json, tsconfig, and schema
+COPY package.json tsconfig.json schema.sql ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy source code files
 COPY src/ ./src/
