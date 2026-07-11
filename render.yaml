@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ueba-anomalytics
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: AML_THRESHOLD_USD
+        value: 10000.00
+      - key: SANCTIONS_LIST_FILE_PATH
+        value: ./dist/domain/services/sanctions_list.json
+      - key: OPENAI_API_KEY
+        value: mock-key
+      - key: AI_MODEL
+        value: gpt-4o
