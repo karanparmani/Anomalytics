@@ -1,0 +1,37 @@
+{
+  "name": "personal-whoop-coach",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private ChatGPT coaching app backed by WHOOP OAuth data",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node scripts/copy-widget.mjs",
+    "dev": "tsx watch src/infrastructure/web/server.ts",
+    "start": "node dist/src/infrastructure/web/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "1.7.4",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "dotenv": "17.2.3",
+    "express": "5.2.1",
+    "jose": "6.2.3",
+    "node-cron": "4.6.0",
+    "pg": "8.22.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "26.1.1",
+    "@types/pg": "8.16.0",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

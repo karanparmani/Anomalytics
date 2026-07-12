@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: whoop-coach
+    runtime: docker
+    plan: starter
+    region: virginia
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    preDeployCommand: node dist/scripts/migrate.js
+    autoDeployTrigger: commit
+    maxShutdownDelaySeconds: 30
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: whoop-coach-db
+          property: connectionString
+      - key: TOKEN_ENCRYPTION_KEY
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: AUTH0_ISSUER_BASE_URL
+        sync: false
+      - key: AUTH0_AUDIENCE
+        sync: false
+      - key: AUTH0_ALLOWED_SUBJECT
+        sync: false
+      - key: WHOOP_CLIENT_ID
+        sync: false
+      - key: WHOOP_CLIENT_SECRET
+        sync: false
+      - key: WHOOP_REDIRECT_URI
+        sync: false
+      - key: WHOOP_SCOPES
+        value: offline read:profile read:cycles read:recovery read:sleep read:workout read:body_measurement
+      - key: WHOOP_RECONCILIATION_CRON
+        value: 7 * * * *
+      - key: WHOOP_RECONCILIATION_LOOKBACK_DAYS
+        value: "7"
+      - key: WHOOP_INITIAL_SYNC_DAYS
+        value: "90"
+
+databases:
+  - name: whoop-coach-db
+    databaseName: whoop_coach
+    user: whoop_coach
+    plan: basic-256mb
+    region: virginia
+    ipAllowList: []
